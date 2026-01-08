@@ -1,0 +1,113 @@
+/* Custom Overrides for Bootstrap to match Juanda Code Premium aesthetic */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+:root {
+  --bs-body-font-family: 'Inter', sans-serif;
+  --bs-body-bg: #050505;
+  --bs-body-color: #e5e5e5;
+  --tech-accent: #00f2ff;
+  --tech-purple: #7000ff;
+  --tech-dark: #0a0a0a;
+}
+
+body {
+  font-family: var(--bs-body-font-family);
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
+}
+
+.font-monospace {
+  font-family: 'JetBrains Mono', monospace !important;
+}
+
+/* Custom Colors mapping to Bootstrap */
+.bg-tech-950 { background-color: #050505; }
+.bg-tech-900 { background-color: #0a0a0a; }
+
+.text-info { color: var(--tech-accent) !important; }
+.bg-info { background-color: var(--tech-accent) !important; }
+.border-info { border-color: var(--tech-accent) !important; }
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+  border: 2px solid #0a0a0a;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--tech-accent);
+}
+
+/* Animations that were tailwind utilities */
+.animate-ping {
+  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.transition-all {
+  transition: all 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+}
+
+.text-gradient {
+  background: linear-gradient(to bottom right, #ffffff, #a1a1aa, #6b7280);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 
+   LAYOUT FIXES
+   Replicate the 40% / 60% Split on Desktop
+*/
+@media (min-width: 992px) {
+  .layout-sidebar {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 40% !important;
+    height: 100vh !important;
+    overflow-y: auto;
+    border-right: 1px solid rgba(255,255,255,0.1);
+  }
+  
+  .layout-main {
+    margin-left: 40% !important;
+    width: 60% !important;
+    min-height: 100vh;
+  }
+
+  /* Staggered Grid Effect */
+  .project-item:nth-child(even) {
+    padding-left: 3rem; /* lg:ml-12 */
+    margin-top: 6rem;   /* lg:mt-24 */
+  }
+  .project-item:nth-child(odd) {
+    padding-right: 3rem; /* lg:mr-12 */
+  }
+}
+
+@media (max-width: 991.98px) {
+  .layout-sidebar {
+    width: 100%;
+    position: relative;
+    height: auto;
+  }
+  .layout-main {
+    width: 100%;
+    margin-left: 0;
+  }
+}
