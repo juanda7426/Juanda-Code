@@ -5,25 +5,25 @@ import { ProjectCard } from "./components/ProjectCard";
 import { Modal } from "./components/Modal";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css"; // We will use this for custom dark theme overrides
+import perfil from "./img/Perfil.jpg";
 
 // Updated Data for Juanda Code
 const INITIAL_PROFILE = {
   name: "Juanda Code",
   title: "Full Stack Developer",
   bio: "Soy Juan David Valencia, desarrollador full stack especializado en construir aplicaciones y ecosistemas digitales a medida desde cero. No utilizo plantillas: diseño y desarrollo soluciones con código limpio, arquitectura escalable y una experiencia de usuario cuidada al detalle. Si buscas llevar tu idea a un nivel profesional, estable y competitivo, estás en el lugar correcto.",
-  avatar:
-    "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=crop&w=400&h=400&q=80",
+  avatar: perfil,
   skills: [
-    "Frontend Development (React)",
+    "Frontend Development (React, Vite)",
     "Backend Development (Node.js / Express)",
     "Relational Databases (PostgreSQL, MySQL)",
     "NoSQL Databases",
     "Responsive UI (Bootstrap 5)",
     "Desktop Applications (Electron)",
-    "Online Payments (Stripe)",
   ],
 
-  email: "contacto@juandacode.com",
+  email: "juanvalencia.code@gmail.com",
+  phone: "573207643590",
   socials: [
     { platform: "Twitter", url: "#" },
     { platform: "LinkedIn", url: "#" },
