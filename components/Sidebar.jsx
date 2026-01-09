@@ -1,16 +1,16 @@
-import React, { useRef } from "react";
-import { Mail, Terminal, MessageCircle, Cpu } from "lucide-react";
+import {
+  Mail,
+  Terminal,
+  MessageCircle,
+  Cpu,
+  CopyrightIcon,
+  LucideCopyright,
+  BotMessageSquare,
+  BotMessageSquareIcon,
+} from "lucide-react";
 import PropTypes from "prop-types";
 
-export const Sidebar = ({ profile, onUpdateAvatar }) => {
-  const fileInputRef = useRef(null);
-
-  const handleFileChange = (e) => {
-    if (e.target.files && e.target.files[0]) {
-      onUpdateAvatar(e.target.files[0]);
-    }
-  };
-
+export const Sidebar = ({ profile }) => {
   return (
     <aside className="layout-sidebar bg-black border-end border-secondary text-white d-flex flex-column justify-content-between p-4 z-1">
       <div className="position-relative z-1 mb-5">
@@ -55,9 +55,9 @@ export const Sidebar = ({ profile, onUpdateAvatar }) => {
 
         {/* Skills */}
         <div className="mb-2">
-          <h5 className=" font-monospace text-uppercase text-info mb-2 d-flex align-items-center gap-2">
+          <h6 className=" font-monospace text-uppercase text-info mb-2 d-flex align-items-center gap-2">
             <Cpu size={14} /> Tecnologías
-          </h5>
+          </h6>
           <div className="d-flex flex-wrap gap-2 p-2">
             {profile.skills.map((skill) => (
               <span
@@ -85,20 +85,25 @@ export const Sidebar = ({ profile, onUpdateAvatar }) => {
           </div>
           <div className="col">
             <button
-              className="btn btn-success w-100 mb-4 d-flex align-items-center justify-content-center gap-2 py-2 fw-semibold"
+              style={{ backgroundColor: "#27d5f4", color: "black" }}
+              className="btn w-100 mb-4 d-flex align-items-center justify-content-center gap-2 py-2 fw-semibold"
               onClick={() =>
                 window.open(`https://wa.me/${profile.phone}`, "_blank")
               }
             >
-              <MessageCircle size={30} />
+              <BotMessageSquare size={30} />
               WhatsApp
             </button>
           </div>
         </div>
 
-        <div className="d-flex align-items-center justify-content-between pt-4 border-top border-secondary">
+        <div className="d-flex align-items-center justify-content-center pt-3 border-top border-secondary">
           <p className="small font-monospace text-secondary mb-0 text-uppercase">
-            v3.0.1 &bull; 2023
+            v3.0.1 &bull; Copyright 2023{" "}
+            <span>
+              <LucideCopyright size={16} />
+            </span>{" "}
+            JuandaCode
           </p>
         </div>
       </div>
@@ -108,5 +113,4 @@ export const Sidebar = ({ profile, onUpdateAvatar }) => {
 
 Sidebar.propTypes = {
   profile: PropTypes.object.isRequired,
-  onUpdateAvatar: PropTypes.func.isRequired,
 };
