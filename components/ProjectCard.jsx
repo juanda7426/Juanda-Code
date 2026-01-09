@@ -13,20 +13,10 @@ export const ProjectCard = ({ project, onClick }) => {
     >
       <div className="position-relative ratio ratio-16x9">
         <img
+          className="card-img-top opacity-75 hover-opacity-100 transition-all"
           src={project.image}
           alt={project.title}
-          className="card-img-top object-fit-cover w-100 h-100 opacity-75 hover-opacity-100 transition-all"
         />
-        <div className="position-absolute bottom-0 start-0 w-100 p-4 bg-gradient-to-t from-black to-transparent">
-          <div className="d-flex justify-content-between align-items-end">
-            <div>
-              <span className="badge bg-info text-dark mb-2 font-monospace">
-                {project.category}
-              </span>
-              <h3 className="card-title h4 fw-bold">{project.title}</h3>
-            </div>
-          </div>
-        </div>
       </div>
 
       <div className="card-footer bg-transparent border-0 d-flex align-items-center justify-content-between p-3">

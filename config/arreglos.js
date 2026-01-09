@@ -1,4 +1,11 @@
 import perfil from "../img/Perfil.jpg";
+import cmInicio from "../img/CM Inicio.png";
+import cmAdmin from "../img/CM Admin.png";
+import cmLogin from "../img/CM login.png";
+import cbInventario from "../img/CB inventario.png";
+import cbCaja from "../img/CB Caja.png";
+import cbLogin from "../img/CB login.png";
+
 // Updated Data for Juanda Code
 export const INITIAL_PROFILE = {
   name: "Juanda Code",
@@ -21,35 +28,34 @@ export const INITIAL_PROFILE = {
 export const INITIAL_PROJECTS = [
   {
     id: "1",
-    title: "Nova Dashboard",
-    category: "SaaS Platform",
-    year: "2024",
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop",
-    description:
-      "Una plataforma de análisis de datos en tiempo real construida para una Fintech internacional. Maneja millones de transacciones con visualización de datos usando D3.js y WebSockets para actualizaciones instantáneas.",
-    tags: ["React", "D3.js", "WebSockets", "Node.js", "Tailwind", "Bootstrap"],
+    title: "Caminos de Amor",
+    category: "Website",
+    year: "2023",
+    image: cmInicio,
+    images: [cmLogin, cmInicio, cmAdmin],
+    description: `Sitio web corporativo para una empresa de servicios funerarios para mascotas, orientado a la presentación institucional, gestión de servicios y beneficios para los dueños.
+       La solución fue implementada priorizando seguridad, escalabilidad y facilidad de administración.
+       La plataforma incluye un módulo administrativo web que permite la gestión centralizada de contenidos y operaciones, como administración de servicios funerarios, planes y beneficios, información corporativa,
+       secciones informativas y control de usuarios. 
+       El sistema tambien implemneta conexion con redes sociales y acceso a WhatsApp desde la plataforma.
+       La solución permite escalabilidad funcional, facilitando la incorporación futura de nuevos módulos como reservas en línea, solicitudes de servicios, pagos, notificaciones o integraciones con sistemas externos.`,
+    tags: ["React", "Node.js", "Bootstrap", "Firebase", "Security"],
+    link: "https://caminosdeamor.com",
   },
   {
     id: "2",
-    title: "Aura E-Commerce",
-    category: "Custom E-Commerce",
-    year: "2023",
-    image:
-      "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?q=80&w=1600&auto=format&fit=crop",
-    description:
-      "Solución de comercio electrónico 'headless' desarrollada desde cero. Sin Shopify, sin WooCommerce. Arquitectura de microservicios para escalar a 50k usuarios concurrentes durante lanzamientos de producto.",
-    tags: ["Next.js", "Stripe API", "Redis", "PostgreSQL"],
-  },
-  {
-    id: "3",
-    title: "Desktop Sync",
+    title: "GesCaBar",
     category: "Desktop App",
-    year: "2023",
-    image:
-      "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1600&auto=format&fit=crop",
-    description:
-      "Aplicación de escritorio multiplataforma (Mac/Windows) para sincronización de archivos segura en entornos corporativos. Encriptación de extremo a extremo y rendimiento nativo.",
-    tags: ["Electron", "React", "C++ Bindings", "Security"],
+    year: "2025",
+    image: cbInventario,
+    images: [cbInventario, cbCaja, cbLogin],
+    description: `Aplicación de escritorio multiplataforma (Windows y macOS) desarrollada para la gestión operativa de bares, cantinas y cafeterías. 
+     El sistema integra módulos de inventario y caja con sincronización en tiempo real, permitiendo la consistencia de datos entre ventas, stock y movimientos financieros.
+     Incluye gestión estructurada de mesas, pedidos, clientes y proveedores, con persistencia de datos segura y transaccional. Implementa encriptación de extremo a extremo para la protección de la información sensible y comunicación segura entre módulos.
+     La aplicación permite configuración dinámica del entorno operativo, incluyendo parametrización de mesas, datos corporativos y ajustes generales del negocio.
+     Incorpora control de gastos e ingresos por turno y por día, registro de clientes frecuentes, administración de colaboradores y un sistema de control de accesos basado en roles y permisos.
+     El diseño está orientado a escalabilidad, seguridad y estabilidad operativa, garantizando un flujo de trabajo eficiente y confiable en entornos comerciales de alta rotación.`,
+    tags: ["Electron", "React", "Node.js", "Bootstrap", "MySQL", "Security"],
+    link: "https://github.com/juandavinci/GesCaBar",
   },
 ];

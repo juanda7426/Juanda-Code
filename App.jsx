@@ -32,7 +32,7 @@ const App = () => {
                 Portfolio
               </h2>
               <h2 className="fw-bold text-white mt-3 mb-0">
-                Proyectos <span className="text-secondary">Recientes</span>
+                Algunos Proyectos
               </h2>
             </div>
           </header>

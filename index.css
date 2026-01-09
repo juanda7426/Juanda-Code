@@ -1,8 +1,8 @@
 /* Custom Overrides for Bootstrap to match Juanda Code Premium aesthetic */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap");
 
 :root {
-  --bs-body-font-family: 'Inter', sans-serif;
+  --bs-body-font-family: "Inter", sans-serif;
   --bs-body-bg: #050505;
   --bs-body-color: #e5e5e5;
   --tech-accent: #00f2ff;
@@ -17,16 +17,26 @@ body {
 }
 
 .font-monospace {
-  font-family: 'JetBrains Mono', monospace !important;
+  font-family: "JetBrains Mono", monospace !important;
 }
 
 /* Custom Colors mapping to Bootstrap */
-.bg-tech-950 { background-color: #050505; }
-.bg-tech-900 { background-color: #0a0a0a; }
+.bg-tech-950 {
+  background-color: #050505;
+}
+.bg-tech-900 {
+  background-color: #0a0a0a;
+}
 
-.text-info { color: var(--tech-accent) !important; }
-.bg-info { background-color: var(--tech-accent) !important; }
-.border-info { border-color: var(--tech-accent) !important; }
+.text-info {
+  color: var(--tech-accent) !important;
+}
+.bg-info {
+  background-color: var(--tech-accent) !important;
+}
+.border-info {
+  border-color: var(--tech-accent) !important;
+}
 
 /* Scrollbar */
 ::-webkit-scrollbar {
@@ -49,7 +59,8 @@ body {
   animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
 @keyframes ping {
-  75%, 100% {
+  75%,
+  100% {
     transform: scale(2);
     opacity: 0;
   }
@@ -66,6 +77,7 @@ body {
 .text-gradient {
   background: linear-gradient(to bottom right, #ffffff, #a1a1aa, #6b7280);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -81,9 +93,9 @@ body {
     width: 40% !important;
     height: 100vh !important;
     overflow-y: auto;
-    border-right: 1px solid rgba(255,255,255,0.1);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
   }
-  
+
   .layout-main {
     margin-left: 40% !important;
     width: 60% !important;
@@ -93,7 +105,7 @@ body {
   /* Staggered Grid Effect */
   .project-item:nth-child(even) {
     padding-left: 3rem; /* lg:ml-12 */
-    margin-top: 6rem;   /* lg:mt-24 */
+    margin-top: 6rem; /* lg:mt-24 */
   }
   .project-item:nth-child(odd) {
     padding-right: 3rem; /* lg:mr-12 */
@@ -110,4 +122,61 @@ body {
     width: 100%;
     margin-left: 0;
   }
+}
+
+/* Custom Utilities */
+.text-gradient-info {
+  background: linear-gradient(135deg, #00f2ff, #7000ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Swiper Custom Styles */
+.swiper {
+  --swiper-navigation-size: 18px; /* Reducido de 24px */
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--tech-accent) !important;
+  background: rgba(0, 0, 0, 0.4);
+  width: 32px !important; /* Reducido de 44px */
+  height: 32px !important; /* Reducido de 44px */
+  border-radius: 50%;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(0, 242, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 14px !important;
+}
+
+/* Modal Custom Sizing */
+@media (min-width: 1200px) {
+  .modal-huge {
+    max-width: 95vw !important;
+    width: 95vw !important;
+  }
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: var(--tech-accent);
+  color: #000 !important;
+}
+
+.swiper-pagination-bullet {
+  background: #fff !important;
+  opacity: 0.3 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--tech-accent) !important;
+  opacity: 1 !important;
+  width: 24px !important;
+  border-radius: 4px !important;
+  transition: all 0.3s ease !important;
 }
