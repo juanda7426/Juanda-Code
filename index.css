@@ -24,9 +24,6 @@ body {
 .bg-tech-950 {
   background-color: #050505;
 }
-.bg-tech-900 {
-  background-color: #0a0a0a;
-}
 
 .text-info {
   color: var(--tech-accent) !important;
@@ -55,16 +52,6 @@ body {
 }
 
 /* Animations that were tailwind utilities */
-.animate-ping {
-  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
-}
-@keyframes ping {
-  75%,
-  100% {
-    transform: scale(2);
-    opacity: 0;
-  }
-}
 
 .transition-all {
   transition: all 0.3s ease;
@@ -90,25 +77,38 @@ body {
     position: fixed !important;
     top: 0;
     left: 0;
-    width: 40% !important;
+    width: 25% !important; /* Reducido de 40% */
+    max-width: 380px;
     height: 100vh !important;
     overflow-y: auto;
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-right: 1px solid rgba(255, 255, 255, 0.05); /* Borde más sutil */
+    background: linear-gradient(180deg, #050505 0%, #0a0a0a 100%);
   }
 
   .layout-main {
-    margin-left: 40% !important;
-    width: 60% !important;
+    margin-left: 25% !important; /* Ajustado al 25% */
+    width: 75% !important;
     min-height: 100vh;
+  }
+
+  /* Si el sidebar tiene un max-width, el margin-left del main debe ajustarse si se supera ese max-width */
+  @media (min-width: 1520px) {
+    .layout-sidebar {
+      width: 380px !important;
+    }
+    .layout-main {
+      margin-left: 380px !important;
+      width: calc(100% - 380px) !important;
+    }
   }
 
   /* Staggered Grid Effect */
   .project-item:nth-child(even) {
-    padding-left: 3rem; /* lg:ml-12 */
-    margin-top: 6rem; /* lg:mt-24 */
+    padding-left: 2rem;
+    margin-top: 4rem;
   }
   .project-item:nth-child(odd) {
-    padding-right: 3rem; /* lg:mr-12 */
+    padding-right: 2rem;
   }
 }
 
@@ -125,12 +125,6 @@ body {
 }
 
 /* Custom Utilities */
-.text-gradient-info {
-  background: linear-gradient(135deg, #00f2ff, #7000ff);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
 
 /* Swiper Custom Styles */
 .swiper {
@@ -154,11 +148,51 @@ body {
   font-size: 14px !important;
 }
 
-/* Modal Custom Sizing */
+/* Modal Custom Sizing & Responsiveness */
+.modal-huge {
+  max-width: 98vw !important;
+  width: 95vw !important;
+  margin: 0.5rem auto !important;
+}
+
+@media (max-width: 991.98px) {
+  .modal-huge {
+    width: 98vw !important;
+    margin: 0.25rem auto !important;
+  }
+
+  .modal-content {
+    max-height: 98vh !important;
+    min-height: auto !important;
+    overflow-y: auto !important;
+  }
+
+  .modal-content .row {
+    flex-direction: column;
+  }
+
+  .modal-content .col-lg-8 {
+    height: 300px !important; /* Altura fija para la imagen en mobile */
+    min-height: 300px;
+    border-right: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .modal-content .col-lg-4 {
+    height: auto !important;
+    max-height: none !important;
+    padding: 1.5rem !important;
+  }
+
+  .modal-content img {
+    max-height: 280px !important;
+  }
+}
+
 @media (min-width: 1200px) {
   .modal-huge {
-    max-width: 95vw !important;
-    width: 95vw !important;
+    max-width: 90vw !important;
+    width: 90vw !important;
   }
 }
 
@@ -179,4 +213,92 @@ body {
   width: 24px !important;
   border-radius: 4px !important;
   transition: all 0.3s ease !important;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+.hover-white:hover {
+  color: white !important;
+}
+
+.hover-bg-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bg-tech-900 {
+  background-color: #0a0a0a;
+}
+
+.max-w-2xl {
+  max-width: 800px;
+}
+
+/* Premium Typography & Effects */
+.letter-spacing-tight {
+  letter-spacing: -0.05em;
+}
+.tracking-widest {
+  letter-spacing: 0.2em;
+}
+.tracking-tighter {
+  letter-spacing: -0.02em;
+}
+.extra-small {
+  font-size: 0.75rem;
+}
+
+.hover-scale-110:hover {
+  transform: scale(1.1);
+}
+
+.shadow-2xl {
+  box-shadow: 25px 0 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* Nav Link Animation */
+.layout-sidebar nav a {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Mobile Typography & Spacing */
+@media (max-width: 768px) {
+  .display-3 {
+    font-size: 2.5rem !important;
+  }
+  .display-4 {
+    font-size: 2rem !important;
+  }
+  .display-5 {
+    font-size: 1.75rem !important;
+  }
+
+  section {
+    padding-bottom: 3rem !important;
+    margin-bottom: 3rem !important;
+  }
+
+  .layout-sidebar {
+    padding: 1.5rem !important;
+  }
+}
+
+.duration-700 {
+  transition-duration: 700ms;
 }

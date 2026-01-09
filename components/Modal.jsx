@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Calendar, ExternalLink, Database } from "lucide-react";
+import { Calendar, Database } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay, EffectFade } from "swiper/modules";
 import PropTypes from "prop-types";

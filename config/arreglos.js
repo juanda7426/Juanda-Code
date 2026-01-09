@@ -5,12 +5,22 @@ import cmLogin from "../img/CM login.png";
 import cbInventario from "../img/CB inventario.png";
 import cbCaja from "../img/CB Caja.png";
 import cbLogin from "../img/CB login.png";
+import logicSync from "../img/logicSync.png";
+import customFlow from "../img/customFlow.png";
 
-// Updated Data for Juanda Code
+// Perfil de Juanda Code actualizado
 export const INITIAL_PROFILE = {
   name: "Juanda Code",
   title: "Full Stack Developer",
-  bio: "Soy Juan David Valencia, desarrollador full stack especializado en construir aplicaciones y ecosistemas digitales a medida desde cero. No utilizo plantillas: diseño y desarrollo soluciones con código limpio, arquitectura escalable y una experiencia de usuario cuidada al detalle. Si buscas llevar tu idea a un nivel profesional, estable y competitivo, estás en el lugar correcto.",
+  bio: `Soy Juan David Valencia, desarrollador full stack especializado en construir aplicaciones y ecosistemas digitales a medida desde cero.
+   No utilizo plantillas: diseño y desarrollo soluciones con código limpio, arquitectura escalable y una experiencia de usuario cuidada al detalle. 
+  Si buscas llevar tu idea a un nivel profesional, estable y competitivo, estás en el lugar correcto.`,
+  problemsSolved: [
+    "Digitalización de procesos operativos manuales para negocios.",
+    "Creación de interfaces intuitivas que reducen la curva de aprendizaje del usuario.",
+    "Desarrollo de aplicaciones de escritorio seguras con persistencia local.",
+    "Optimización de la presencia digital de empresas mediante arquitecturas modernas.",
+  ],
   avatar: perfil,
   skills: [
     "Frontend Development (React, Vite)",
@@ -29,7 +39,7 @@ export const INITIAL_PROJECTS = [
   {
     id: "1",
     title: "Caminos de Amor",
-    category: "Website",
+    category: "Real: Website",
     year: "2023",
     image: cmInicio,
     images: [cmLogin, cmInicio, cmAdmin],
@@ -41,11 +51,12 @@ export const INITIAL_PROJECTS = [
        La solución permite escalabilidad funcional, facilitando la incorporación futura de nuevos módulos como reservas en línea, solicitudes de servicios, pagos, notificaciones o integraciones con sistemas externos.`,
     tags: ["React", "Node.js", "Bootstrap", "Firebase", "Security"],
     link: "https://caminosdeamor.com",
+    isReal: true,
   },
   {
     id: "2",
     title: "GesCaBar",
-    category: "Desktop App",
+    category: "Real: Desktop App",
     year: "2025",
     image: cbInventario,
     images: [cbInventario, cbCaja, cbLogin],
@@ -57,5 +68,30 @@ export const INITIAL_PROJECTS = [
      El diseño está orientado a escalabilidad, seguridad y estabilidad operativa, garantizando un flujo de trabajo eficiente y confiable en entornos comerciales de alta rotación.`,
     tags: ["Electron", "React", "Node.js", "Bootstrap", "MySQL", "Security"],
     link: "https://github.com/juandavinci/GesCaBar",
+    isReal: true,
+  },
+  {
+    id: "3",
+    title: "LogicSync Desktop",
+    category: "Conceptual: Utility App",
+    year: "2025",
+    image: logicSync,
+    images: [logicSync],
+    description:
+      "Herramienta conceptual de escritorio diseñada para la sincronización inteligente de bases de datos locales en entornos con conectividad limitada. Ideal para negocios que necesitan operar 100% offline y sincronizar datos en la nube de forma segura cuando el acceso a internet se restablece.",
+    tags: ["Electron", "Node.js", "SQLite", "Security"],
+    isReal: false,
+  },
+  {
+    id: "4",
+    title: "CustomFlow ERP",
+    category: "Conceptual: Business Ecosystem",
+    year: "2025",
+    image: customFlow,
+    images: [customFlow],
+    description:
+      "Sistema modular conceptual para la gestión de flujos de producción en empresas de manufactura a pequeña escala. Este proyecto explora cómo eliminar procesos manuales en papel mediante una interfaz React ultra-rápida y un backend escalable que centraliza pedidos, stock y entregas.",
+    tags: ["React", "Express", "PostgreSQL", "Digitalization"],
+    isReal: false,
   },
 ];
