@@ -33,6 +33,7 @@ export const INITIAL_PROFILE = {
 
   email: "juanvalencia.code@gmail.com",
   phone: "573207643590",
+  demosLink: "https://suroeste-demos.vercel.app/",
 };
 
 export const INITIAL_PROJECTS = [

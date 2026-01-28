@@ -1,4 +1,12 @@
-import { Terminal, Cpu, Home, Briefcase, User, Send } from "lucide-react";
+import {
+  Terminal,
+  Cpu,
+  Home,
+  Briefcase,
+  User,
+  Send,
+  ExternalLink,
+} from "lucide-react";
 import PropTypes from "prop-types";
 
 export const Sidebar = ({ profile }) => {
@@ -12,6 +20,12 @@ export const Sidebar = ({ profile }) => {
       name: "Proyectos",
       icon: <Briefcase size={20} strokeWidth={1.5} />,
       href: "#proyectos",
+    },
+    {
+      name: "Algunos Demos",
+      icon: <ExternalLink size={20} strokeWidth={1.5} />,
+      href: profile.demosLink,
+      external: true,
     },
     {
       name: "Sobre Mí",
@@ -74,6 +88,8 @@ export const Sidebar = ({ profile }) => {
               <li key={link.name}>
                 <a
                   href={link.href}
+                  target={link.external ? "_blank" : undefined}
+                  rel={link.external ? "noopener noreferrer" : undefined}
                   className="group d-flex align-items-center gap-3 px-3 py-2 rounded-2 text-secondary text-decoration-none transition-all hover-white"
                   style={{
                     fontSize: "0.95rem",

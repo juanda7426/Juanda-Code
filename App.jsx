@@ -1,16 +1,27 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Sidebar } from "./components/Sidebar";
 import { ProjectCard } from "./components/ProjectCard";
 import { Modal } from "./components/Modal";
+import { Loader } from "./components/Loader";
+import { INITIAL_PROFILE, INITIAL_PROJECTS } from "./config/arreglos";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { INITIAL_PROFILE } from "./config/arreglos";
-import { INITIAL_PROJECTS } from "./config/arreglos";
 import "./index.css";
 
 const App = () => {
   const profile = INITIAL_PROFILE;
   const projects = INITIAL_PROJECTS;
   const [selectedProject, setSelectedProject] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulamos una carga de datos para mostrar el loader premium
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) return <Loader />;
 
   const realProjects = projects.filter((p) => p.isReal);
   const conceptualProjects = projects.filter((p) => !p.isReal);
@@ -40,7 +51,7 @@ const App = () => {
               {profile.bio}
             </p>
 
-            <div className="row g-4 mt-2">
+            <div className="row g-4 mt-2 mb-5">
               <h3 className="h5 font-monospace text-info text-uppercase mb-4">
                 Problemas que resuelvo:
               </h3>
@@ -55,6 +66,18 @@ const App = () => {
                   </div>
                 </div>
               ))}
+            </div>
+
+            <div className="mt-5">
+              <a
+                href={profile.demosLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-outline-info btn-lg px-5 py-3 fw-bold animate-fade-in hover-lift"
+                style={{ borderWidth: "2px" }}
+              >
+                PROBAR DEMOS EN VIVO
+              </a>
             </div>
           </section>
 
@@ -172,6 +195,14 @@ const App = () => {
                   className="btn btn-info btn-lg px-5 py-3 fw-bold shadow-lg"
                 >
                   Contactar por Email
+                </a>
+                <a
+                  href={profile.demosLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-outline-info btn-lg px-5 py-3 fw-bold"
+                >
+                  Explorar Demos
                 </a>
                 <a
                   href={`https://wa.me/${profile.phone}`}
