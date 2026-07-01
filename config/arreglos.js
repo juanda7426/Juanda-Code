@@ -5,8 +5,10 @@ import cmLogin from "../img/CM login.png";
 import cbInventario from "../img/CB inventario.png";
 import cbCaja from "../img/CB Caja.png";
 import cbLogin from "../img/CB login.png";
-import logicSync from "../img/logicSync.png";
 import customFlow from "../img/customFlow.png";
+import hmhInicio from "../img/HMHInicio.png";
+import hmhMenu from "../img/HMHMenu.png";
+import hmhOrder from "../img/HMHPedido.png";
 
 // Perfil de Juanda Code actualizado
 export const INITIAL_PROFILE = {
@@ -32,8 +34,9 @@ export const INITIAL_PROFILE = {
   ],
 
   email: "juanvalencia.code@gmail.com",
-  phone: "573207643590",
+  phone: "573226933654",
   demosLink: "https://suroeste-demos.vercel.app/",
+  msgWhatsApp: "Hola Juanda Code, vengo de tu portafolio y estoy interesado en tus servicios",
 };
 
 export const INITIAL_PROJECTS = [
@@ -73,15 +76,16 @@ export const INITIAL_PROJECTS = [
   },
   {
     id: "3",
-    title: "LogicSync Desktop",
-    category: "Conceptual: Utility App",
+    title: "Hamburguesas MA'ANTO",
+    category: "Real: Web App",
     year: "2025",
-    image: logicSync,
-    images: [logicSync],
+    image: hmhInicio,
+    images: [hmhInicio, hmhMenu, hmhOrder],
     description:
-      "Herramienta conceptual de escritorio diseñada para la sincronización inteligente de bases de datos locales en entornos con conectividad limitada. Ideal para negocios que necesitan operar 100% offline y sincronizar datos en la nube de forma segura cuando el acceso a internet se restablece.",
-    tags: ["Electron", "Node.js", "SQLite", "Security"],
-    isReal: false,
+      "Catalogo digital para Hamburguesas MA'ANTO. Un catalogo que permite ver las diferentes hamburguesas que ofrece el restaurante, realizar pedidos y contactar al restaurante.",
+    tags: ["Vite", "HTML", "CSS", "JavaScript", "Bootstrap"],
+    link: "https://hamburguesasdonjuan.netlify.app/",
+    isReal: true,
   },
   {
     id: "4",

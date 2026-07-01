@@ -205,7 +205,7 @@ const App = () => {
                   Explorar Demos
                 </a>
                 <a
-                  href={`https://wa.me/${profile.phone}`}
+                  href={`https://wa.me/${profile.phone}?text=${encodeURIComponent(profile.msgWhatsApp)}`}
                   target="_blank"
                   rel="noreferrer"
                   className="btn btn-outline-info btn-lg px-5 py-3 fw-bold"
